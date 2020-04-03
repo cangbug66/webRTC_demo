@@ -46,7 +46,7 @@ hangUpButton.addEventListener("click", function () {
 //发送文字消息
 sendButton.addEventListener("click", function (event) {
     var val = messageInput.value;
-    received.innerHTML += +"我："+ val + "<br />";
+    received.innerHTML += "我："+ val + "<br />";
     received.scrollTop = received.scrollHeight;
     dataChannel.send(val)
     // console.log();
@@ -247,7 +247,7 @@ function onDataChannel()
         channel.onmessage = function (event) {
             console.log('dataChannel onmessage onDataChannel')
             console.log("Got Data Channel Message:", event.data);
-            received.innerHTML += event.data + "<br />";
+            received.innerHTML += "收到对方消息："+event.data + "<br />";
             received.scrollTop = received.scrollHeight;
 
         };
